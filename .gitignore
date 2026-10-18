@@ -1,3 +1,10 @@
+# AI tool configs
+.agents/
+.claude/
+.cursor/
+.devin/
+.windsurf/
+
 # compiled output
 /dist
 /node_modules
@@ -37,6 +44,7 @@ lerna-debug.log*
 
 # dotenv environment variable files
 .env
+.env.test
 .env.development.local
 .env.test.local
 .env.production.local
@@ -58,3 +66,7 @@ node_modules/
 dist/
 
 /src/generated/prisma
+
+# compiled JavaScript (source is TypeScript)
+*.js
+*.js.map

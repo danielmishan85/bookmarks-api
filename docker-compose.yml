@@ -1,16 +1,22 @@
-# ככה אני מגדיר את הסירביסים שאני רוצה להפעיל ברקע
-# בעזרת הפקודה של docker compose up -d אני מפעיל את הסירביסים שאני רוצה להפעיל ברקע
 services:
   dev-db:
     image: postgres:15-alpine
-    environment: # ככה אני מגדיר את המשתנים שאני רוצה להפעיל
+    environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: postgres
       POSTGRES_DB: postgres
-    ports: # ככה אני מגדיר את הפורטים שאני רוצה להפעיל
+    ports:
       - 5432:5432
-    volumes: # ככה אני מגדיר את הפולוטים שאני רוצה להפעיל
+    volumes:
       - postgres_data:/var/lib/postgresql/data
+  test-db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: postgres
+    ports:
+      - 5433:5432
 
 volumes:
-  postgres_data: 
+  postgres_data:
